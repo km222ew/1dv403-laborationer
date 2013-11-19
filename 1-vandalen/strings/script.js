@@ -2,19 +2,33 @@
 
 window.onload = function(){
 
-	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
+		 
+	    var string = [];
 
+	    if (str === "") {
+            throw new Error("Fältet är tomt. Skriv något för att kunna omvandla.")
+	    }
+	   
+        for (var i = 0; i < str.length; i++) {
 
+	        if (str.charAt(i) === "A" || str.charAt(i) === "a") {
 
+	            string[i] = "#";
+	        }
+	        else if (str.charAt(i) == str.charAt(i).toUpperCase() && str.charAt(i) != str.charAt(i).toLowerCase()) {
+	             
+	            string[i] = str.charAt(i).toLowerCase();
+	        }
+	        else {
 
+	           string[i] = str.charAt(i).toUpperCase();
+	        }
 
+	    }
 
-	};
+	    return string.join("");
+    };
 	// ------------------------------------------------------------------------------
 
 
