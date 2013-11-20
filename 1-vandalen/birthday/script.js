@@ -5,12 +5,28 @@ window.onload = function(){
 	
 	var birthday = function(date){
 		
+	    if (!/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.test(date)) {
+	        throw new Error("Du har inte angivigt datumet enligt: YYYY-MM-DD");
+	    }
 
+        var oneDay = 1000 * 60 * 60 * 24;
 
-			// Din kod här.
+	    var userBirthDay = new Date(date);
+	    userBirthDay.setDate(userBirthDay.getDate() + 1);
+	    var currentDate = new Date();
 
+	    userBirthDay.setFullYear(2013);
 
+	    if (userBirthDay < currentDate) {
+            userBirthDay.setFullYear(2014)
+	    }
 
+	    userBirthDay.getTime();
+	    currentDate.getTime();
+
+	    var differenceInMs = userBirthDay - currentDate;
+
+	    return Math.floor(differenceInMs / oneDay);
 
 	};
 	// ------------------------------------------------------------------------------
