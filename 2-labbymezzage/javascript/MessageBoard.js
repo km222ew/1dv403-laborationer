@@ -3,7 +3,11 @@
 var messageEngine = {
 
     init: function () {
-        alert("Hello! I am an alert box!!");
+        var mess = new Message("Testmeddelande", new Date());
+        alert(mess);
+        alert(mess.getText());
+        mess.setText("En annan text");
+        alert(mess);
     }
 
 };
