@@ -67,6 +67,14 @@ body {
 	box-sizing: border-box;
     
 }
+footer {
+
+    color:#3c3c3c;
+    font-family: cabin-regular;
+    font-weight:500;
+    font-size: 12px;
+    text-align:right;
+}
 p {
     margin:0;
 }
