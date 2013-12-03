@@ -1,0 +1,142 @@
+body {
+    background-color: #F5FFFF;
+}
+#container {
+
+    width:100%;
+    max-width:600px;
+    display:block;
+    margin:0 auto;
+
+}
+#messageContainer {
+
+    display:block;
+    border:solid 2px #3498db;
+    width:100%;
+    background-color:#0493bd;
+	padding:5%;
+	width: 100%;
+	float: left;
+	margin-top:10px;
+    border-radius: 18px;
+
+}
+#header {
+
+    display:block;
+    width:100%;
+    text-align:center;
+    color:#3c3c3c;
+	font-family: cabin-regular;
+    font-weight:500;
+	font-size: 26px;
+
+}
+#userMessages {
+
+    height:250px;
+    overflow:auto;
+    
+	border-radius: 9px;
+	
+	background-color: #fbfbfb;
+	
+	margin-bottom: 10px;
+	width:100%;
+	box-sizing: border-box;
+    border: 3px solid rgba(0,0,0,0);
+    
+
+}
+.userMessage {
+
+    
+    color:#3c3c3c;
+	font-family: cabin-regular;
+    font-weight:500;
+	font-size: 18px;
+	border-radius: 9px;
+	line-height: 20px;
+	background-color: #97e5ed;
+	padding: 13px 13px 13px ;
+    margin-top:5px;
+	margin-bottom: 10px;
+    margin-left:8px;
+	width:95%;
+	box-sizing: border-box;
+    
+}
+p {
+    margin:0;
+}
+#messageCounter {
+
+    text-align:right;
+    color:#3c3c3c;
+	font-family: cabin-regular;
+    font-weight:500;
+	font-size: 18px;
+    margin-bottom:5px;
+
+}
+#messageWindow {
+
+    display:block;
+    width:100%;
+    
+
+}
+#messageInput {
+
+    color:#3c3c3c;
+	font-family: cabin-regular;
+    font-weight:500;
+	font-size: 18px;
+	border-radius: 9px;
+	line-height: 20px;
+	background-color: #fbfbfb;
+	padding: 13px 13px 13px ;
+	margin-bottom: 10px;
+    height:120px;
+	width:100%;
+	box-sizing: border-box;
+    border: 3px solid rgba(0,0,0,0);
+
+}
+#messageInput:focus
+{
+	background: #fff;
+	box-shadow: 0;
+	border: 3px solid #3498db;
+	color: #3498db;
+	outline: none;
+    padding: 13px 13px 13px;
+}
+#submitMessage {
+
+    font-family: cabin-regular;
+	float:right;
+	width: 50%;
+	border: #fbfbfb solid 3px;
+	border-radius:9px;
+	cursor:pointer;
+	background-color: #3498db;
+	color:white;
+	font-size:24px;
+	padding-top:14px;
+	padding-bottom:14px;
+    margin-top:-4px;
+    font-weight:700;
+
+}
+#submitMessage:hover{
+	background-color: #B1BBCC;
+	color: #0493bd;
+}
+
+
+
+
+
+
