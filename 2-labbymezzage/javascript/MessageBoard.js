@@ -9,6 +9,16 @@ var MessageEngine = {
         var messageButton = document.getElementById("submitMessage");
         var messageInput = document.getElementById("messageInput");
 
+        messageInput.onkeypress = function (e) {
+            if (!e) var e = window.event;
+
+            if (e.keyCode == 13) {
+
+                newMessage();
+                e.preventDefault();
+            }
+        }
+
         messageButton.onclick = newMessage;
         
         function newMessage() {
