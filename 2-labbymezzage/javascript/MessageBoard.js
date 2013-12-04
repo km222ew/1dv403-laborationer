@@ -75,8 +75,9 @@ var MessageEngine = {
         messageRemove.href = "#";
 
         messageRemove.onclick = function () {
-
-            MessageEngine.removeMessage(messageID);
+            if (confirm("Är du säker på att du vill ta bort detta meddelande?")) {
+                MessageEngine.removeMessage(messageID);
+            }
         };
 
         //Lägger till knapp för att se tiden
