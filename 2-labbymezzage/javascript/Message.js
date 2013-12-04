@@ -30,5 +30,8 @@ Message.prototype.getHTMLText = function() {
 
 Message.prototype.getDateText = function () {
 
-    return this.getDate();
+    var monthNames = [ "Januari", "Februari", "Mars", "April", "Maj", "Juni",
+    "Juli", "Augusti", "September", "Oktober", "November", "December" ];
+
+    return "Inlägget skapades den " + this.getDate().getDate() + " " + monthNames[this.getDate().getMonth()] + " " + this.getDate().getFullYear() + " klockan " + this.getDate().getHours() + ":" + this.getDate().getMinutes() + ":" + this.getDate().getSeconds();
 }

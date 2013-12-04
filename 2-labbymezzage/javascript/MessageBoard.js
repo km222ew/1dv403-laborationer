@@ -52,7 +52,7 @@ var MessageEngine = {
 
         //Sätter tiden meddelandet var skapat i en footer
         var messageTime = document.createElement("footer");
-        messageTime.innerHTML = MessageEngine.messages[messageID].getDateText().toLocaleTimeString();
+        messageTime.innerHTML = MessageEngine.messages[messageID].getDate().toLocaleTimeString();
 
         //Lägger till en knapp för att radera meddelande
         var messageRemove = document.createElement("a");
@@ -64,8 +64,20 @@ var MessageEngine = {
             MessageEngine.removeMessage(messageID);
         };
 
+        //Lägger till knapp för att se tiden
+        var messageDateTime = document.createElement("a");
+        messageDateTime.className = "messageTime";
+        messageDateTime.href = "#";
+
+        messageDateTime.onclick = function () {
+
+            alert(MessageEngine.messages[messageID].getDateText().toLocaleString());
+
+        };
+
         userMessages.appendChild(aMessage);
         aMessage.appendChild(messageRemove);
+        aMessage.appendChild(messageDateTime);
         aMessage.appendChild(text);
         aMessage.appendChild(messageTime);
         

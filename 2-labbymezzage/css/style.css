@@ -87,8 +87,10 @@ p {
 .messageTime {
 
     display:block;
+    width:20px;
+    height:20px;
     float:right;
-    background-image:url(images/time.jpg);
+    background-image:url(../images/status.png);
 }
 footer {
     clear:both;
