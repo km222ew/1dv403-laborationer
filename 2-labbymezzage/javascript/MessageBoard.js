@@ -12,10 +12,15 @@ var MessageEngine = {
         messageInput.onkeypress = function (e) {
             if (!e) var e = window.event;
 
-            if (e.keyCode == 13) {
+            if (e.shiftKey) {
 
-                newMessage();
+            }
+
+            else if (e.keyCode == 13) {
+
                 e.preventDefault();
+                newMessage();
+                
             }
         }
 
