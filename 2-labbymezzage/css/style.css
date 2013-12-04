@@ -51,7 +51,7 @@ body {
 }
 .userMessage {
 
-    
+    float:left;
     color:#3c3c3c;
 	font-family: cabin-regular;
     font-weight:500;
@@ -67,8 +67,33 @@ body {
 	box-sizing: border-box;
     
 }
-footer {
+p {
 
+    display:block;
+    padding:5px;
+    float:left;
+    
+}
+.messageRemove {
+
+    display:block;
+    width:20px;
+    height:20px;
+    float:right;
+    background-image:url(../images/delete.jpg);
+    
+    
+}
+.messageTime {
+
+    display:block;
+    float:right;
+    background-image:url(images/time.jpg);
+}
+footer {
+    clear:both;
+    display:block;
+    float:right;
     color:#3c3c3c;
     font-family: cabin-regular;
     font-weight:500;
