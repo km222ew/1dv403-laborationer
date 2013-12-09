@@ -1,6 +1,6 @@
 var Memory = {
 
-    brickLocation: [],
+    pictureLocation: [],
 
     init: function () {
 
@@ -8,7 +8,7 @@ var Memory = {
             cols = 4;
         
 
-        Memory.brickLocation = RandomGenerator.getPictureArray(rows, cols);
+        Memory.pictureLocation = RandomGenerator.getPictureArray(rows, cols);
 
         
         Memory.createTable(rows, cols);
@@ -34,6 +34,14 @@ var Memory = {
 
                 var td = document.createElement("td");
                 tr.appendChild(td);
+
+                var a = document.createElement("a");
+                a.href = "#";
+                td.appendChild(a);
+
+                var img = document.createElement("img");
+                img.src = "pics/0.png";
+                a.appendChild(img);
 
             }
         }
