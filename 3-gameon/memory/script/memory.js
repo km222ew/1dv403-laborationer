@@ -1,8 +1,15 @@
 var Memory = {
 
+    brickLocation: [],
+
     init: function () {
 
-        console.log("hello");
+        var rows = 4,
+            cols = 4;
+
+        Memory.brickLocation = RandomGenerator.getPictureArray(rows, cols);
+
+        console.log(Memory.brickLocation);
 
     }
 
