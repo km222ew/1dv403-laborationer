@@ -10,7 +10,6 @@ var Memory = {
     rows: 4,
     cols: 4,
 
-
     init: function () {
 
         Memory.pictureLocation = RandomGenerator.getPictureArray(Memory.rows, Memory.cols);
@@ -18,8 +17,6 @@ var Memory = {
         Memory.createTable(Memory.rows, Memory.cols);
         
     },
-
-
 
     createTable: function (rows, cols) {
 
@@ -54,15 +51,19 @@ var Memory = {
         }
     },
 
-
-    
     turnBrick: function (brickNumber, id) {
 
         id.onclick = function () {
 
-            Memory.clickCount += 1;
-
             var img = id.getElementsByTagName("img")[0];
+
+            if (img.getAttribute("src") !== "pics/0.png") {
+
+                return;
+
+            }
+
+            Memory.clickCount += 1;
 
             if (Memory.clickCount == 2 || Memory.clickCount == 1) {
 
@@ -72,7 +73,7 @@ var Memory = {
             }
             else {
 
-                return false;
+                return;
 
             }
 
@@ -81,6 +82,7 @@ var Memory = {
                 Memory.noOfTries += 1;
 
                 setTimeout(function () {
+
                     if (Memory.brickChoice[0].getAttribute("src") === Memory.brickChoice[1].getAttribute("src")) {
 
                         Memory.victory += 1;
@@ -90,21 +92,17 @@ var Memory = {
                             alert("Grattis, du vann på " + Memory.noOfTries + " försök.");
 
                         }
-
-                        Memory.brickChoice = [];
-
                     }
                     else {
 
                         Memory.brickChoice[0].setAttribute("src", "pics/0.png");
                         Memory.brickChoice[1].setAttribute("src", "pics/0.png");
-                        Memory.brickChoice = [];
-                        
                     }
 
+                    Memory.brickChoice = [];
                     Memory.clickCount = 0;
 
-                }, 800);
+                }, 700);
 
                 
             }
