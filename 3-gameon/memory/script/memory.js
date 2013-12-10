@@ -1,27 +1,29 @@
+"use strict";
+
 var Memory = {
 
     pictureLocation: [],
+    clickCount: 0,
+    
+    rows: 4,
+    cols: 4,
+
 
     init: function () {
 
-        var rows = 4,
-            cols = 4;
-        
+        Memory.pictureLocation = RandomGenerator.getPictureArray(Memory.rows, Memory.cols);
 
-        Memory.pictureLocation = RandomGenerator.getPictureArray(rows, cols);
-
+        Memory.createTable(Memory.rows, Memory.cols);
         
-        Memory.createTable(rows, cols);
-        
-
-        
-
     },
+
+
 
     createTable: function (rows, cols) {
 
         var memoryGame = document.getElementById("memoryTable");
         var table = document.createElement("table");
+        var brickNumber = 0;
 
         memoryGame.appendChild(table);
 
@@ -43,8 +45,31 @@ var Memory = {
                 img.src = "pics/0.png";
                 a.appendChild(img);
 
+                Memory.turnBrick(brickNumber, a);
+
+                brickNumber += 1;
             }
         }
+    },
+
+
+    
+    turnBrick: function (brickNumber, id) {
+
+        id.onclick = function () {
+
+            Memory.clickCount += 1;
+
+            var img = id.getElementsByTagName("img")[0];
+
+            if (Memory.clickCount == 2 || Memory.clickCount == 1) {
+
+                img.src = "pics/" + Memory.pictureLocation[brickNumber] + ".png";
+             }
+
+            
+        };
+        
     }
 
 };
