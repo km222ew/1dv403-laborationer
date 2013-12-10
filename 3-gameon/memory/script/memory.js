@@ -3,8 +3,10 @@
 var Memory = {
 
     pictureLocation: [],
+    brickChoice: [],
     clickCount: 0,
-    
+    noOfTries: 0,
+    victory: 0,
     rows: 4,
     cols: 4,
 
@@ -65,9 +67,47 @@ var Memory = {
             if (Memory.clickCount == 2 || Memory.clickCount == 1) {
 
                 img.src = "pics/" + Memory.pictureLocation[brickNumber] + ".png";
-             }
+                Memory.brickChoice.push(img)
 
-            
+            }
+            else {
+
+                return false;
+
+            }
+
+            if (Memory.clickCount == 2) {
+
+                Memory.noOfTries += 1;
+
+                setTimeout(function () {
+                    if (Memory.brickChoice[0].getAttribute("src") === Memory.brickChoice[1].getAttribute("src")) {
+
+                        Memory.victory += 1;
+
+                        if (Memory.victory == Memory.rows * Memory.cols / 2) {
+
+                            alert("Grattis, du vann på " + Memory.noOfTries + " försök.");
+
+                        }
+
+                        Memory.brickChoice = [];
+
+                    }
+                    else {
+
+                        Memory.brickChoice[0].setAttribute("src", "pics/0.png");
+                        Memory.brickChoice[1].setAttribute("src", "pics/0.png");
+                        Memory.brickChoice = [];
+                        
+                    }
+
+                    Memory.clickCount = 0;
+
+                }, 800);
+
+                
+            }
         };
         
     }
