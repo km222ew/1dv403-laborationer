@@ -5,11 +5,6 @@ var Validator = {
     form: document.getElementById("form"),
     submitButton: document.getElementById("submit"),
 
-    firstName: true,
-    lastName: true,
-    zipCode: true,
-    email: true,
-
     init: function () {
 
         var firstName = document.getElementById("firstName"),
@@ -19,19 +14,47 @@ var Validator = {
 
         Validator.checkEmpty(firstName);
         Validator.checkEmpty(lastName);
+        Validator.checkEmpty(zipCode);
+        Validator.checkEmpty(email);
         
+        Validator.form.onsubmit = submit;
 
-        Validator.submitButton.onclick = function (e) {
-            e.preventDefault();
-            if (Validator.firstName && Validator.lastName && Validator.zipCode && Validator.email) {
+        function submit() {
 
-                Validator.form.submit();
+            if (firstName.className && lastName.className && zipCode.className && email.className == "valid") {
+
+                return true;
+
             }
             else {
+
                 return false;
             }
 
-        };
+        }
+
+
+
+        //Validator.submitButton.onclick = function (e) {
+
+        //    console.log(Validator.firstName);
+        //    console.log(Validator.lastName);
+        //    console.log(Validator.zipCode);
+        //    console.log(Validator.email);
+        //    e.preventDefault();
+
+            
+
+        //    if (firstName.className && lastName.className && zipCode.className && email.className == "valid") {
+
+        //        Validator.form.submit();
+
+        //    }
+        //    else {
+        //        return false;
+        //    }
+
+        //};
     },
 
 
@@ -42,18 +65,69 @@ var Validator = {
             if (input.value == "") {
 
                 input.setAttribute("class", "invalid");
-                Validator.input = false;
 
             }
             else {
-                input.setAttribute("class", "valid");
-                Validator.input = true;
-            }
 
+                if (input.name == "zipCode") {
+
+                    Validator.checkZip(input);
+
+                }
+                else if (input.name == "email") {
+
+                    Validator.checkEmail(input);
+
+                }
+                else {
+
+                    input.setAttribute("class", "valid");
+    
+                }
+
+            }
 
         };
 
+    },
+
+    checkZip: function (input) {
+
+        //input.onblur = function () {
+
+            if (input.value.match(/^\d{5}$/)) {
+                input.setAttribute("class", "valid");
+
+            }
+            else {
+                input.setAttribute("class", "invalid");
+
+            }
+
+        //};
+            
+    },
+
+    checkEmail: function (input) {
+
+        //input.onblur = function () {
+
+            if (input.value.match(/^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/)) {
+                input.setAttribute("class", "valid");
+
+            }
+            else {
+                input.setAttribute("class", "invalid");
+
+            }
+
+        //};
     }
+
 }
 
 window.onload = Validator.init;
+
+// /^\d{5}$/
+
+// /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/
