@@ -28,6 +28,7 @@ body {
 fieldset {
 
     padding:25px;
+    border-radius: 9px;
 
 }
 input {
