@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+
+      <div id="container">
+
+          <form action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php" method="post" id="form">
+
+                  <fieldset>
+                      <legend>Form Validation</legend>
+
+                      <label for="firstName">First name</label>
+                      <input type="text" id="firstName" name="firstName" />
+
+                      <label for="lastName">Last name</label>
+                      <input type="text" id="lastName" name="lastName" />
+
+                      <label for="zipCode">Zip code</label>
+                      <input type="text" id="zipCode" name="zipCode" />
+
+                      <label for="email">E-mail</label>
+                      <input type="text" id="email" name="email" />
+
+                      <label for="priceModel">Price model</label>
+                      <select name="priceModel" id="priceModel">
+                          <option value="low" selected>Low</option>
+                          <option value="medium" >Medium</option>
+                          <option value="high" >High</option>
+
+                      </select>
+
+                  </fieldset>
+
+                  <button type="submit" id="submit">Submit</button>
+
+              </form>
+
+
+          
+
+
+      </div>
+    <!-- page content -->
+      <script src="validate.js"></script>
+  </body>
+</html>
