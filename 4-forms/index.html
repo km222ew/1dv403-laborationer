@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>Forms</title>
-    <link rel="stylesheet" href="css/style.css">
+    <head>
+        <meta charset="utf-8">
+        <title>Forms</title>
+        <link rel="stylesheet" href="css/style.css">
     
-  </head>
-  <body>
+    </head>
+<body>
 
-      <div id="container">
+    <div id="container">
 
-          <form action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php" method="post" id="form">
+        <form action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php" method="post" id="form">
 
-                  <fieldset>
-                      <legend>Form Validation</legend>
+            <fieldset>
 
-                      <label for="firstName">First name</label>
-                      <input type="text" id="firstName" name="firstName" />
+                <legend>Form Validation</legend>
 
-                      <label for="lastName">Last name</label>
-                      <input type="text" id="lastName" name="lastName" />
+                <label for="firstName">First name</label>
+                <input type="text" id="firstName" name="firstName" />
 
-                      <label for="zipCode">Zip code</label>
-                      <input type="text" id="zipCode" name="zipCode" />
+                <label for="lastName">Last name</label>
+                <input type="text" id="lastName" name="lastName" />
 
-                      <label for="email">E-mail</label>
-                      <input type="text" id="email" name="email" />
+                <label for="zipCode">Zip code</label>
+                <input type="text" id="zipCode" name="zipCode" />
 
-                      <label for="priceModel">Price model</label>
-                      <select name="priceModel" id="priceModel">
-                          <option value="low" selected>Low</option>
-                          <option value="medium" >Medium</option>
-                          <option value="high" >High</option>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" />
 
-                      </select>
+                <label for="priceModel">Price model</label>
+                <select name="priceModel" id="priceModel">
+                <option value="low" selected>Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
 
-                  </fieldset>
+                </select>
 
-                  <button type="submit" id="submit">Submit</button>
+            </fieldset>
 
-              </form>
+        <button type="submit" id="submitButton">Submit</button>
 
-        </div>
-    <!-- page content -->
+        </form>
+
+    </div>
+
     <script src="javascript/validate.js"></script>
-  </body>
+
+</body>
 </html>
