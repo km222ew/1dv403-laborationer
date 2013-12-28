@@ -1,0 +1,70 @@
+body {
+
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/dark_wood_@2X.png');
+    font-family: cabin-regular;
+    font-weight:500;
+
+}
+#webDesktop {
+
+    display:block;
+    height:640px;
+    width:1024px;
+    margin:0 auto;
+    
+
+
+}
+#desktop {
+
+    display:block;
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/random_grey_variations_@2X.png');
+    height:638px;
+    width:1020px;       
+	border:2px white;
+	border-top-style:solid;
+    border-right-style:solid;
+    border-left-style:solid;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+}
+#menu {
+
+    display:block;
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/grey_wash_wall.png');
+    height:84px;
+    width:1020px;
+    border:2px solid white;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+}
+#imgFolder {
+
+    display:block;
+    position:relative;
+    background-color:pink;
+    height:375px;
+    width:450px;
+    left:10%;
+    top:10%;
+
+}
+#folderButton {
+
+    float:left;
+    display:block;
+    height:inherit;
+    margin-left:5px;
+
+}
+#folderButton img {
+
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
