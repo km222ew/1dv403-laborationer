@@ -42,17 +42,7 @@ body {
     border-bottom-right-radius: 18px;
 
 }
-#imgFolder {
 
-    display:block;
-    position:relative;
-    background-color:pink;
-    height:375px;
-    width:450px;
-    left:10%;
-    top:10%;
-
-}
 #folderButton {
 
     float:left;
@@ -67,4 +57,66 @@ body {
     padding-left:10px;
     padding-right:10px;
 }
+#imgFolder {
+
+    display:block;
+    position:relative;
+    height:375px;
+    width:450px;
+    border:2px solid white;
+    left:10%;
+    top:10%;
+    border-radius:9px;
+}
+#top {
+
+    display:block;
+    height:28px;
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/grey_wash_wall.png');
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+
+}
+.topImage {
+
+    float:left;
+    display:block;
+    padding:2px;
+
+}
+.topClose {
+
+    float:right;
+    display:block;
+}
+#picContainer {
+
+    display: block;
+    background-color:#c4c4c4;
+    float: left;
+    width: 450px;
+    height: 326px;
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/gplaypattern.png');
+    overflow: scroll;
+    overflow-x: hidden;
+
+
+}
+#bottom {
+
+    display: block;
+    float: left;
+    width:inherit;
+    height:21px;
+    /* thanks to subtlepatterns.com for background-texture */
+    background-image:url('background/grey_wash_wall.png');
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+    #bottom img {
+
+        padding:5px;
+    }
 
