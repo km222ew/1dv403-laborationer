@@ -10,7 +10,13 @@ var webDesktop = {
         //Gör den till en "knapp"
         menuButton.onclick = function () {
 
+            
             var desktop = document.getElementById("desktop");
+
+            if (desktop.firstElementChild) {
+
+                return false;
+            }
 
             var imageFolder = document.createElement("div");
             imageFolder.id = "imgFolder";
@@ -25,11 +31,15 @@ var webDesktop = {
             var topText = document.createElement("span");
             topText.id = "folderText";
             topText.appendChild(document.createTextNode("Image Viewer"));
-            //desktop.appendChild(imageFolder);
 
             var topClose = document.createElement("a");
             topClose.className = "topClose";
             topClose.setAttribute("href", "#");
+
+            topClose.onclick = function () {
+
+                desktop.removeChild(imageFolder);
+            }
 
             var closeImg = document.createElement("img");
             closeImg.setAttribute("src", "pics/closewindow1.png");
@@ -42,8 +52,6 @@ var webDesktop = {
 
             var gif = document.createElement("img");
             gif.setAttribute("src", "pics/ajax-loader.gif");
-
-
 
             desktop.appendChild(imageFolder);
             imageFolder.appendChild(top);
