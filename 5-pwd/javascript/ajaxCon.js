@@ -11,14 +11,11 @@ function AjaxCon(url, callback) {
         if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
 
             callback(xhr.responseText);
-
         }
         else {
 
             console.log("Läsfel, status:" + xhr.status);
-
         }
-
     };
 
     xhr.open("get", url, true);
@@ -34,21 +31,17 @@ function AjaxCon(url, callback) {
         try {
 
             xhr = new XMLHttpRequest();
-
-        } catch (error) {
+        }
+        catch (error) {
 
             try {
 
                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-
-            } catch (error) {
+            }
+            catch (error) {
 
                 throw new Error("No XHR object available");
-
             }
-
         }
-
     }
-
 }
