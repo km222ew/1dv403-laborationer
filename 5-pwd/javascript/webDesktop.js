@@ -63,8 +63,65 @@ var webDesktop = {
             imageFolder.appendChild(bottom);
             bottom.appendChild(gif);
 
+            var url = "http://homepage.lnu.se/staff/tstjo/labbyServer/imgviewer/";
+
+            new AjaxCon(url, function (data) {
+
+                bottom.removeChild(gif);
+
+                var images = JSON.parse(data);
+                var imgSize = webDesktop.imageSize(images);
+                
+                for (var i = 0; i < images.length; i++) {
+
+                    var imageContainer = document.createElement("figure");
+
+                    var imageClick = document.createElement("a");
+                    imageClick.setAttribute("href", "#");
+                    
+                    var image = document.createElement("img");
+                    image.setAttribute("src", images[i].thumbURL);
+                                        
+                    imageContainer.style.height = imgSize.height + "px";
+                    imageContainer.style.width = imgSize.width + "px";
+
+                    picContainer.appendChild(imageContainer);
+                    imageContainer.appendChild(imageClick);
+                    imageClick.appendChild(image);
+
+                    
+                }
+            });
+
+        }
+    },
+
+    imageSize: function (images) {
+
+        var height = 0;
+        var width = 0;
+        
+        for (var x in images) {
+           
+            if (images[x].thumbHeight > height) {
+
+                height = images[x].thumbHeight;
+            }
+
+            if (images[x].thumbWidth > width) {
+
+                width = images[x].thumbWidth;
+            }
+        }
+
+        return {
+            
+            height: height,
+            width: width
         };
+
     }
+    
 }
 
 window.onload = webDesktop.init;

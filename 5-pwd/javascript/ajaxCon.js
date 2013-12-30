@@ -6,42 +6,41 @@ function AjaxCon(url, callback) {
 
     xhr.onreadystatechange = function () {
 
-    if (xhr.readystate === 4) {
+        if (xhr.readyState === 4) {
 
-        if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
 
-            callback(xhr.responseText);
-        }
-        else {
+                callback(xhr.responseText);
+            }
+            else {
 
-            console.log("Läsfel, status:" + xhr.status);
+                console.log("Läsfel, status:" + xhr.status);
+            }
         }
     };
 
     xhr.open("get", url, true);
 
-    xhr.send(null);
+    xhr.send(null);     
+}
 
+AjaxCon.prototype.getXHR = function () {
+
+    var xhr = null;
+
+    try {
+
+        xhr = new XMLHttpRequest();
     }
-
-    AjaxCon.prototype.getXHR = function () {
-
-        var xhr = null;
-
+    catch (error) {
         try {
 
-            xhr = new XMLHttpRequest();
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
         }
         catch (error) {
 
-            try {
-
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            catch (error) {
-
-                throw new Error("No XHR object available");
-            }
+            throw new Error("No XHR object available");
         }
     }
-}
+    return xhr;
+};
