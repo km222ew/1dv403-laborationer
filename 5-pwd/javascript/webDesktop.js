@@ -7,6 +7,7 @@ var webDesktop = {
         //Hämtar a-taggen i "knappen"
         var menuButton = document.getElementById("click");
 
+        //En reset-knapp för att återställa bakgrunden
         var resetButton = document.getElementById("reset");
         var buttonUrl = "css/background/random_grey_variations_@2X.png";
         
