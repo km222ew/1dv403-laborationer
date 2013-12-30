@@ -7,12 +7,17 @@ var webDesktop = {
         //Hämtar a-taggen i "knappen"
         var menuButton = document.getElementById("click");
 
+        var resetButton = document.getElementById("reset");
+        var buttonUrl = "css/background/random_grey_variations_@2X.png";
+        
+        webDesktop.changeBackground(buttonUrl, resetButton);
+
         //Gör den till en "knapp"
         menuButton.onclick = function () {
 
-            
             var desktop = document.getElementById("desktop");
 
+            //Kollar om ett fönster finns. Hindrar att fler skapas.
             if (desktop.firstElementChild) {
 
                 return false;
@@ -20,7 +25,7 @@ var webDesktop = {
 
             var imageFolder = document.createElement("div");
             imageFolder.id = "imgFolder";
-            
+
             var top = document.createElement("div");
             top.id = "top";
 
@@ -36,6 +41,7 @@ var webDesktop = {
             topClose.className = "topClose";
             topClose.setAttribute("href", "#");
 
+            //Stäng-knappen för fönstret
             topClose.onclick = function () {
 
                 desktop.removeChild(imageFolder);
@@ -67,21 +73,27 @@ var webDesktop = {
 
             new AjaxCon(url, function (data) {
 
+                //Tar bort laddnings-gif när anropet är färdigt.
                 bottom.removeChild(gif);
 
                 var images = JSON.parse(data);
+                //Funktionen kollar vilket tummnagel som är störst
                 var imgSize = webDesktop.imageSize(images);
-                
+
+                //Kör igenom alla objekt i JSON och skapar en plats för varje bild i rutan
                 for (var i = 0; i < images.length; i++) {
 
                     var imageContainer = document.createElement("figure");
 
                     var imageClick = document.createElement("a");
                     imageClick.setAttribute("href", "#");
-                    
+
+                    //Ger a-taggen förmågan att byta bakgrunds-bild på rutan
+                    webDesktop.changeBackground(images[i].URL, imageClick);
+
                     var image = document.createElement("img");
                     image.setAttribute("src", images[i].thumbURL);
-                                        
+
                     imageContainer.style.height = imgSize.height + "px";
                     imageContainer.style.width = imgSize.width + "px";
 
@@ -89,11 +101,19 @@ var webDesktop = {
                     imageContainer.appendChild(imageClick);
                     imageClick.appendChild(image);
 
-                    
+
                 }
             });
+        };
+    },
 
-        }
+    changeBackground: function (image, ID) {
+    
+        ID.onclick = function () {
+
+            document.getElementById("desktop").style.backgroundImage = "url('" + image + "')";
+
+        };
     },
 
     imageSize: function (images) {
@@ -107,21 +127,17 @@ var webDesktop = {
 
                 height = images[x].thumbHeight;
             }
-
             if (images[x].thumbWidth > width) {
 
                 width = images[x].thumbWidth;
             }
         }
-
         return {
             
             height: height,
             width: width
-        };
-
-    }
-    
+        }
+    }   
 }
 
 window.onload = webDesktop.init;

@@ -4,7 +4,6 @@ body {
     background-image:url('background/dark_wood_@2X.png');
     font-family: cabin-regular;
     font-weight:500;
-
 }
 #webDesktop {
 
@@ -12,9 +11,6 @@ body {
     height:640px;
     width:1024px;
     margin:0 auto;
-    
-
-
 }
 #desktop {
 
@@ -40,18 +36,20 @@ body {
     border:2px solid white;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
-
 }
-
-#folderButton {
+.button {
 
     float:left;
     display:block;
     height:inherit;
     margin-left:5px;
-
+    -webkit-transition: -webkit-transform .2s ease-in-out;
 }
-#folderButton img {
+    .button:hover {
+
+        -webkit-transform: scale(1.2);
+    }
+#menu img {
 
     padding-top:10px;
     padding-left:10px;
@@ -76,21 +74,24 @@ body {
     background-image:url('background/grey_wash_wall.png');
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-
 }
 .topImage {
 
     float:left;
     display:block;
     padding:2px;
-
 }
 .topClose {
 
     float:right;
     display:block;
     margin-right:2px;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
 }
+    .topClose:hover {
+
+        -webkit-transform: scale(0.8);
+    }
 #picContainer {
 
     display: block;
@@ -100,10 +101,8 @@ body {
     height: 326px;
     /* thanks to subtlepatterns.com for background-texture */
     background-image:url('background/gplaypattern.png');
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
-
-
 }
 #bottom {
 
@@ -126,7 +125,6 @@ body {
     padding:2px;
     margin-top:3px;
     color:white;
-
 }
 figure {
 
@@ -137,5 +135,14 @@ figure {
     padding:6px;
     background-color:#c4c4c4;
     border-radius:9px;
-
+    -webkit-transition: -webkit-transform .2s ease-in-out;
 }
+    figure a {
+
+        display:block;
+    }
+    figure:hover {
+
+        -webkit-transform: scale(1.2);
+    }
+
